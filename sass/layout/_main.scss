@@ -1,0 +1,84 @@
+@mixin flexbox($flex, $jc, $ai, $g, $fc) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+  flex-direction: $fc;
+}
+
+.main {
+  &__form {
+    @include flexbox(flex, space-between, center, stretch, row);
+
+    margin: {
+      top: 48px;
+    }
+
+    &_label {
+      position: relative;
+
+      &-icon {
+        color: $input-color;
+        font-size: 20px;
+        position: absolute;
+        left: 30px;
+        top: 20px;
+      }
+
+      &-search {
+        height: 56px;
+        width: 480px;
+        outline: none;
+        background-color: $navbar-shadow-color;
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+        border-radius: 5px;
+        border: 1px solid $navbar-shadow-color;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $input-color;
+        text-indent: 75px;
+        letter-spacing: .7px;
+      }
+    }
+
+    &_select {
+      background-color: $navbar-shadow-color;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+      border-radius: 5px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $intro-text-color;
+      height: 56px;
+      width: 200px;
+      border: 1px solid $navbar-shadow-color;
+
+      padding: {
+        left: 24px;
+        right: 24px;
+      }
+
+      letter-spacing: .7px;
+      outline: none;
+
+      &-option {
+        background: $navbar-shadow-color;
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+        border-radius: 5px;
+        border: none;
+
+        padding: {
+          top: 8px;
+          bottom: 8px;
+        }
+
+        margin: 10px 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $intro-text-color;
+      }
+    }
+  }
+}

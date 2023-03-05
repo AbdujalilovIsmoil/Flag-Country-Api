@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ****GLOBAL META TAGS**** -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ****CDNJS LIBRARIES**** -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- ****SITE META TAGS**** -->
+  <meta name="author" content="Abdujalilov Ismoil" />
+  <meta name="description" content="150 words" />
+  <meta name="og:title" content="Site sarlavhasi" />
+  <meta name="og:description" content="Site haqida malumot" />
+  <meta name="og:image" content="Site rasmi" />
+  <meta name="og:site_name" content="Flag" />
+  <!-- ****FONTS CSS**** -->
+  <link rel="stylesheet" href="./css/font.css" />
+  <!-- ****MAIN CSS**** -->
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>Flag</title>
+</head>
+
+<body>
+  <!-- *****FLAG COUNTRIES CODES START**** -->
+  <!-- ****MODAL CODES START**** -->
+  <section class="section">
+    <div class="section__modal">
+      <div class="container">
+        <div class="wrapper">
+          <button type="button" class="section__modal-btn">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+          </button>
+          <div class="section__modal_container">
+            <div class="section__modal_container_box">
+              <img src="${svg}" alt="rasm" title="rasm" class="section__modal_container_box-img" />
+            </div>
+            <div class="section__modal_container_box">
+              <div class="section__modal_container_box_fluid">
+                <div class="section__modal_container_box_fluid_small">
+                  <h2 class="section__modal_container_box_fluid_small-title">
+                    ${name}
+                  </h2>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_fluid_box_small_text-span">
+                      Native Name:
+                    </span>
+                    ${nativeName}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Population:
+                    </span>
+                    ${population}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Region:
+                    </span>
+                    ${region}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_small_text-span">
+                      Sub Region:
+                    </span>
+                    ${subregion}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Capital:
+                    </span>
+                    ${capital}
+                  </p>
+                </div>
+                <div class="section__modal_container_box_fluid_small">
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Top Level Domain:
+                    </span>
+                    ${topLevelDomain}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Currencies:
+                    </span>
+                    ${currencies[0]?.name}
+                  </p>
+                  <p class="section__modal_container_box_fluid_small_text">
+                    <span class="section__modal_container_box_fluid_small_text-span">
+                      Languages:
+                    </span>
+                    ${languages[0]?.name}
+                  </p>
+                </div>
+              </div>
+              <div class="section__modal_container_buttons">
+                <h3 class="section__modal_container_buttons-title">
+                  Border Countries:
+                </h3>
+                <button class="section__modal_container_buttons-btn" type="button">
+                  France
+                </button>
+                <button class="section__modal_container_buttons-btn" type="button">
+                  Germany
+                </button>
+                <button class="section__modal_container_buttons-btn" type="button">
+                  Netherlands
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ****MODAL CODES END**** -->
+  <!-- ****HEADER CODES START**** -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a class="nav-intro" href="index.html"> Where in the world? </a>
+        <ul class="nav__list">
+          <li class="nav__list_item">
+            <i class="nav__list_item-moon fa fa-sun"></i>
+            <p class="nav__list_item-text">Dark Mode</p>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ****HEADER CODES END**** -->
+
+  <!-- ****MAIN CODES START**** -->
+  <main class="main">
+    <div class="container">
+      <form class="main__form">
+        <label for="" class="main__form_label">
+          <i class="main__form_label-icon fa fa-search"></i>
+          <input type="text" class="main__form_label-search" id="search" placeholder="Search for a country…" />
+        </label>
+        <select class="main__form_select">
+          <option class="main__form_select-option" selected>
+            Filter by Region
+          </option>
+        </select>
+      </form>
+    </div>
+  </main>
+  <!-- ****MAIN CODES END**** -->
+
+  <!-- ****SECTION CODES START**** -->
+  <section class="section">
+    <div class="container">
+      <div class="section__card">
+        <h1 class="section__card-title">Ma'lumotlar soni:</h1>
+        <div class="section__card_container">
+          <!-- <div class="section__card_container_box">
+            <img class="section__card_container_box-img" src="" alt="rasm" title="rasm" />
+            <div class="section__card_container_box_body">
+              <h2 class="section__card_container_box_body-title">Name</h2>
+              <p class="section__card_container_box_body-text">
+                <strong>Population:</strong> Population
+              </p>
+              <p class="section__card_container_box_body-text">
+                <strong>Region:</strong> Region
+              </p>
+              <p class="section__card_container_box_body-text">
+                <strong>Capital:</strong> Capital
+              </p>
+              <button type="button" class="section__card_container_box_body-btn">
+                Information
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ****SECTION CODES END**** -->
+  <!-- ****HEADER CODES END**** -->
+  <!-- *****FLAG COUNTRIES CODES END**** -->
+  <!-- ****JAVASCRIPT LINKS**** -->
+  <script src="./js/utilits.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
