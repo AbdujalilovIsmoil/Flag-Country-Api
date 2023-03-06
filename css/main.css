@@ -416,6 +416,10 @@ a {
   color: #111517;
 }
 
+.error {
+  text-align: center;
+}
+
 .section__card-title {
   text-align: center;
   margin-top: 50px;
@@ -509,6 +513,9 @@ a {
   -ms-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   left: 100%;
+}
+.section__modal.active {
+  left: 0;
 }
 .section__modal-btn {
   background-color: #FFFFFF;

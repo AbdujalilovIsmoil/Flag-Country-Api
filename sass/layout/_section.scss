@@ -1,4 +1,9 @@
+.error {
+  text-align: center;
+}
+
 .section {
+
   &__card {
     &-title {
       text-align: center;
@@ -10,7 +15,7 @@
 
       &-title-second {
         text-align: center;
-  
+
         margin: {
           top: 50px;
           bottom: 50px;
@@ -18,11 +23,10 @@
       }
     }
 
-    
-
     &_container {
       @include Grid(grid, space-between, repeat(4, auto), center, 0, row);
       text-align: center;
+
       margin: {
         top: 48px;
       }
@@ -127,6 +131,10 @@
     -ms-transition: all .4s linear;
     -o-transition: all .4s linear;
     left: 100%;
+
+    &.active {
+      left: 0;
+    }
 
     &-btn {
       background-color: $navbar-shadow-color;
