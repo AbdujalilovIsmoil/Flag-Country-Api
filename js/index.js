@@ -41,7 +41,7 @@ function renderData(data = []) {
       "div",
       "section__card_container_box",
       `
-      <img class="section__card_container_box-img" src="${item.flags.png}" alt="rasm" title="rasm" />
+      <img class="section__card_container_box-img" src="${item.flags?.png}" alt="rasm" title="rasm" />
       <div class="section__card_container_box_body">
         <h2 class="section__card_container_box_body-title">${item.name}</h2>
           <p class="section__card_container_box_body-text">
@@ -66,7 +66,7 @@ function renderData(data = []) {
   // Search
 
   function findFunction(regex) {
-    if(regex == "/All/gi"){
+    if (regex == "/All/gi") {
       return data;
     }
     return data.filter(item => {
@@ -110,7 +110,7 @@ function renderData(data = []) {
         "div",
         "section__card_container_box",
         `
-        <img class="section__card_container_box-img" src="${item.flags.png}" alt="rasm" title="rasm" />
+        <img class="section__card_container_box-img" src="${item.flags?.png}" alt="rasm" title="rasm" />
         <div class="section__card_container_box_body">
           <h2 class="section__card_container_box_body-title">${item.name}</h2>
             <p class="section__card_container_box_body-text">
@@ -211,97 +211,94 @@ function renderData(data = []) {
       const clickBtnData = data.filter(el => el.area == e.target.dataset.information);
       modalRender(clickBtnData);
     }
-  })
 
-  function modalRender(data = []) {
-    out: for (const item of data) {
-      $(".wrapper").innerHTML = `
-      <button type="button" class="section__modal-btn">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
-      </button>
-        <div class="section__modal_container">
-      <div class="section__modal_container_box">
-        <img src="${item.flags.svg}" alt="rasm" title="rasm" class="section__modal_container_box-img" />
-      </div>
-      <div class="section__modal_container_box">
-        <div class="section__modal_container_box_fluid">
-          <div class="section__modal_container_box_fluid_small">
-            <h2 class="section__modal_container_box_fluid_small-title">
-              ${item.name}
-            </h2>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_fluid_box_small_text-span">
-                Native Name:
-              </span>
-              ${item.nativeName}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Population:
-              </span>
-              ${item.population}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Region:
-              </span>
-              ${item.region}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_small_text-span">
-                Sub Region:
-              </span>
-              ${item.subregion}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Capital:
-              </span>
-              ${item.capital}
-            </p>
-          </div>
-          <div class="section__modal_container_box_fluid_small">
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Top Level Domain:
-              </span>
-              ${item.topLevelDomain}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Currencies:
-              </span>
-              ${item.currencies[0]?.name}
-            </p>
-            <p class="section__modal_container_box_fluid_small_text">
-              <span class="section__modal_container_box_fluid_small_text-span">
-                Languages:
-              </span>
-              ${item.languages[0]?.name}
-            </p>
-          </div>
-          </div>
-            <div class="section__modal_container_buttons">
-              <h3 class="section__modal_container_buttons-title">
-                Border Countries:
-              </h3>
+    function modalRender(data = []) {
+      for (const item of data) {
+        $(".wrapper").innerHTML = `
+        <button type="button" class="section__modal-btn">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+        </button>
+          <div class="section__modal_container">
+        <div class="section__modal_container_box">
+          <img src="${item.flags?.svg}" alt="rasm" title="rasm" class="section__modal_container_box-img" />
+        </div>
+        <div class="section__modal_container_box">
+          <div class="section__modal_container_box_fluid">
+            <div class="section__modal_container_box_fluid_small">
+              <h2 class="section__modal_container_box_fluid_small-title">
+                ${item.name}
+              </h2>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_fluid_box_small_text-span">
+                  Native Name:
+                </span>
+                ${item.nativeName}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Population:
+                </span>
+                ${item.population}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Region:
+                </span>
+                ${item.region}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_small_text-span">
+                  Sub Region:
+                </span>
+                ${item.subregion}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Capital:
+                </span>
+                ${item.capital}
+              </p>
+            </div>
+            <div class="section__modal_container_box_fluid_small">
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Top Level Domain:
+                </span>
+                ${item.topLevelDomain}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Currencies:
+                </span>
+                ${item.currencies[0]?.name ? item.currencies[0]?.name : "NOT FOUND"}
+              </p>
+              <p class="section__modal_container_box_fluid_small_text">
+                <span class="section__modal_container_box_fluid_small_text-span">
+                  Languages:
+                </span>
+                ${item.languages[0]?.name}
+              </p>
+            </div>
+            </div>
+              <div class="section__modal_container_buttons">
+                <h3 class="section__modal_container_buttons-title">
+                  Border Countries:
+                </h3>
+              </div>
             </div>
           </div>
-        </div>
-      `;
-
-      inside: for (const el of item.borders) {
-        const countries = createDiv("button", "section__modal_container_buttons-btn", el);
-        $(".section__modal_container_buttons").append(countries);
+        `;
+        item.borders ? item.borders.forEach(el => {
+          const countries = createDiv("button", "section__modal_container_buttons-btn", el ? el : "NOT FOUND");
+          $(".section__modal_container_buttons").append(countries);
+        }) : $(".section__modal_container_buttons").textContent = "Border Countries: NOT FOUND";
       }
 
+      $(".section__modal").addEventListener("click", (e) => {
+        if (e.target.getAttribute("class") == "section__modal-btn") {
+          $(".section__modal").classList.remove("active");
+        }
+      });
     }
-
-    $(".section__modal").addEventListener("click", (e) => {
-      if (e.target.getAttribute("class") == "section__modal-btn") {
-        $(".section__modal").classList.remove("active");
-      }
-    });
-  }
-
+  })
 }
