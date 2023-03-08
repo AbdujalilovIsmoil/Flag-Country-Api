@@ -66,6 +66,9 @@ function renderData(data = []) {
   // Search
 
   function findFunction(regex) {
+    if(regex == "/All/gi"){
+      return data;
+    }
     return data.filter(item => {
       return item.name.match(regex) || item.region.match(regex);
     });
@@ -168,11 +171,6 @@ function renderData(data = []) {
       }, 1000);
       $(".section__card-title").innerHTML = `Ma'lumotlar soni: ${selectFilter.length} ta`;
     }
-    if (filterValue == "All") {
-      $(".main__form_select").innerHTML = "";
-      return api();
-    }
-
   });
 
   function selectRender(data = []) {
